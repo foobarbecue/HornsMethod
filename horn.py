@@ -33,7 +33,7 @@ def apply_random_transform(points, range_rad, trans_max, noise_sd):
             eps = np.random.multivariate_normal(np.zeros(3), noise_covariance)
             point += eps
 
-        return (np.asarray(trans_points), Rx, Ry, Rz, t, np.dot(Rx, np.dot(Ry, Rz)))
+    return (np.asarray(trans_points), Rx, Ry, Rz, t, np.dot(Rx, np.dot(Ry, Rz)))
         
 def apply_transform(R, t, points):
     return np.dot(R, points.transpose()).transpose() + t
